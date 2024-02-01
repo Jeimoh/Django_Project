@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('',views.home, name="Home"),
-    path('room/',views.room, name = "Room")
+    path('room/<str:pk>/',views.room, name = "room"),
+    path('create-room/',views.CreateRoom, name = "Create-Room"),
     
 ]
