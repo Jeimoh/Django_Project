@@ -3,4 +3,20 @@
 
 {% block content%}
 <h1>{{room.name}}</h1>
+<small>topic: {{room.topic}}</small>
+<br>
+{% for message in messages %}
+    <div class="Message" style="color: white;background-color: rgb(57, 53, 53); border-radius: 25px;width: fit-content;padding: 10px;">
+        <small>{{message.User}}</small>
+        <p>{{message}}</p>
+        <small>{{message.dateCreated}}</small>
+        <br>
+        <a href="{% url 'Create-message' room.id%}"><button style="background-color: aqua; font-size: large;">reply</button></a>
+        <br>
+        
+    </div>
+    <br>
+
+{% endfor %}
+<a href="{% url 'Create-message' room.id%}"> <button style="background-color: aqua; font-size: large;">Add message</button> </a>
 {% endblock content %}

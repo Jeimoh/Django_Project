@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+
+{% block content%}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete room {{room.name}}</p>
+    <button type="submit">Delete</button>
+</form>
+
+{% endblock content %}
